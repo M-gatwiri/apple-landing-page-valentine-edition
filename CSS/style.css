@@ -26,6 +26,7 @@
   margin: 0 auto;
   margin-top: 10px;
   padding: 0 20px;
+  position : relative;
 }
 
 .nav-bar a{
@@ -75,13 +76,137 @@ height: 90vh;
 width: 100%;
 background-color: white;
 position: absolute;
-top: 60px;
-right: 10px;
+left: 0;
+right: 0;
+top: 100%;
 display: none;
-display: flex;
 overflow: hidden;
 }
 
+.mac,
+.ipad,
+.iphone,
+.watch,
+.vision,
+.airpods,
+.tv-home,
+.entertainment,
+.accessories,
+.support{
+    height: 90vh;
+    width: 100%;
+  display:none;
+  position:absolute;
+  left:0;
+  right:0;
+  top:100%;
+  background-color:white;
+}
 
 
+.nav-bar a[href="store"]:hover + .store,
+.store:hover{ display:flex; }
+
+.nav-bar a[href="mac"]:hover + .mac,
+.mac:hover{ display:flex; }
+
+.nav-bar a[href="ipad"]:hover + .ipad,
+.ipad:hover{ display:flex; }
+
+.nav-bar a[href="iphone"]:hover + .iphone,
+.iphone:hover{ display:flex; }
+
+.nav-bar a[href="watch"]:hover + .watch,
+.watch:hover{ display:flex; }
+
+.nav-bar a[href="vision"]:hover + .vision,
+.vision:hover{ display:flex; }
+
+.nav-bar a[href="AirPods"]:hover + .airpods,
+.airpods:hover{ display:flex; }
+
+.nav-bar a[href="tv-home"]:hover + .tv-home,
+.tv-home:hover{ display:flex; }
+
+.nav-bar a[href="Entertainment"]:hover + .entertainment,
+.entertainment:hover{ display:flex; }
+
+.nav-bar a[href="Accessories"]:hover + .accessories,
+.accessories:hover{ display:flex; }
+
+.nav-bar a[href="support"]:hover + .support,
+.support:hover{ display:flex; }
+
+
+.hamburger{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+  .hamburger{
+    display:block;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .hamburger::before,
+  .hamburger::after,
+  .hamburger div {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    left: 0;
+    transition: 0.3s;
+  }
+
+  .hamburger::before { top: 0; }
+  .hamburger::after { bottom: 0; }
+  .hamburger div { top: 50%; transform: translateY(-50%); }
+
+  .nav-links{
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    background:white;
+    flex-direction:column;
+    display:none;
+    padding:20px;
+    z-index:1000;
+  }
+
+  .nav-links a{
+    padding:15px 0;
+    font-size:20px;
+    border-bottom:1px solid #eee;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .store,
+  .mac,
+  .ipad,
+  .iphone,
+  .watch,
+  .vision,
+  .airpods,
+  .tv-home,
+  .entertainment,
+  .accessories,
+  .support{
+    display:none; 
+    flex-direction: column;
+    padding-left: 20px; 
+    position: relative;
+    height: auto; 
+  }
+}
 

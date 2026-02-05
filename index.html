@@ -13,6 +13,10 @@
   <body>
     <div class="top">
       <div class="nav-bar">
+        <div class="nav-links" id="navLinks">
+
+
+
         <a href="apple"><i class="fa-brands fa-apple"></i></a>
         
         <a href="store">Store</a>
@@ -216,7 +220,7 @@
   </div>
         </div>
 
-        <a href="TV & Home">TV & Home</a>
+        <a href="tv-home">TV & Home</a>
         <div class="tv-home">
         <div class="tv-home-1">
           <p>Explore All TV & Home</p>
@@ -269,7 +273,7 @@
          </div>
 
         <a href="Accessories">Accessories</a>
-        <div class="accesories">
+        <div class="accessories">
         <div class="accesories-1">
           <p>Shop All Accessories</p>
           <p>Mac</p>
@@ -320,6 +324,15 @@
         <a href="glass"><i class="fa-solid fa-magnifying-glass"></i></a>
         <a href="bag"><i class="fa-solid fa-bag-shopping"></i></a>
         </div>
+        </div>
+          
+<div class="hamburger" id="hamburger">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+          </div>
       </div>
     </div>
 
@@ -330,7 +343,43 @@
 <button>Shop</button>
 
         </div>
-
     </div>
+
+    <script>
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+const navItems = document.querySelectorAll(".nav-links > a");
+
+navItems.forEach(item => {
+  item.addEventListener("click", e => {
+    const submenu = item.nextElementSibling;
+
+    if (
+      (submenu && submenu.classList.contains("store")) ||
+      (submenu && submenu.classList.contains("mac")) ||
+      (submenu && submenu.classList.contains("ipad")) ||
+      (submenu && submenu.classList.contains("iphone")) ||
+      (submenu && submenu.classList.contains("watch")) ||
+      (submenu && submenu.classList.contains("vision")) ||
+      (submenu && submenu.classList.contains("airpods")) ||
+      (submenu && submenu.classList.contains("tv-home")) ||
+      (submenu && submenu.classList.contains("entertainment")) ||
+      (submenu && submenu.classList.contains("accessories")) ||
+      (submenu && submenu.classList.contains("support"))
+    ) {
+      e.preventDefault();
+      submenu.style.display = submenu.style.display === "flex" ? "none" : "flex";
+    }
+  });
+});
+</script>
+
+    
+
   </body>
 </html>
