@@ -8,6 +8,9 @@
   font-family: "Inter", "Roboto", "Helvetica", "Arial", sans-serif;
   background-color: #F5F5F7;
   background-image: url(../images/background.png);
+   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .top{
